@@ -107,7 +107,7 @@ def run_module():
     )
 
     if module.check_mode:
-        return result
+        module.exit_json(**result)
 
     state = module.params['state']
     insights_name = module.params['insights_name']
